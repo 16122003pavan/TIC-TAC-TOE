@@ -18,6 +18,8 @@ const winPatterns = [
 const resetGame = () => {
   turnO = true;
   count = 0;
+  document.getElementById('fname').value="";
+  document.getElementById('lname').value="";
   enableBoxes();
 };
 
@@ -62,7 +64,18 @@ const enableBoxes = () => {
 };
 
 const showWinner = (winner) => {
-  alert("Congratulations, Winner is ${winner}");
+  let f="";
+  console.log(winner);
+  if(winner==='O')
+  {
+    f=document.getElementById('fname').value;
+    console.log(f);
+    console.log(document.getElementById('lname').value);
+  }
+  else{
+    f=document.getElementById('lname').value;
+  }
+  alert(`Congratulations, Winner is ${f}`);
   disableBoxes();
 };
 
